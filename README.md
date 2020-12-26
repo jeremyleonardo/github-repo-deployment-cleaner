@@ -1,4 +1,4 @@
-# Github Repo Depoloyment Cleaner
+# Github Repo Deployment Cleaner
 
 A little webpage/script too, to automate the process, can be easily hosted on StackBlitz and putting your info will do the process automatically.
 
