@@ -1,15 +1,16 @@
-import "./style.css";
-
 // RECOMMENDED: Disconnect HEROKU from Github before doing this (though not strictly necessary, I think).
 //See https://stackoverflow.com/a/61272173/6569950 for more info.
 
+import fetch from "node-fetch";
+
+let args = process.argv.slice(2)
+
 // PARAMETERS
-const TOKEN = ""; // Personal Access Token, MUST BE `repo_deployments` authorized
-const REPO = "your-repo"; // e.g. "monorepo"
-const USER_OR_ORG = "your-name"; // e.g. "your-name"
+const TOKEN = args[0]; // Personal Access Token, MUST BE `repo_deployment` authorized
+const REPO = args[1]; // e.g. "your-name-or-org/your-repo"
 
 // GLOBAL VARS
-const URL = `https://api.github.com/repos/${USER_OR_ORG}/${REPO}/deployments`;
+const URL = `https://api.github.com/repos/${REPO}/deployments`;
 const AUTH_HEADER = `token ${TOKEN}`;
 
 // UTILITY FUNCTIONS
@@ -54,15 +55,5 @@ getAllDeployments()
     return res;
   })
   .then(finalResult => {
-    const appDiv = document.getElementById("app");
-    appDiv.innerHTML = `
-<h1>CLEANUP RESULT</h1>
-<br>
-Removed Deployments: ${finalResult.length}
-<br>
-<br>Ids:<br>
-${JSON.stringify(finalResult)}
-<br><br><br><br><br><br>
-  <p>(Open up the console)</p>
-`;
+    console.log(`Removed Deployments: ${finalResult.length}`)
   });

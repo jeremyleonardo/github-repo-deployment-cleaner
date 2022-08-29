@@ -2,5 +2,8 @@
   "name": "js-fp7wnu",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  },
+  "main": "index.mjs"
 }
