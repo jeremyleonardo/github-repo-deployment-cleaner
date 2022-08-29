@@ -1,6 +1,6 @@
 # Github Repo Deployment Cleaner
 
-A little script to automate clear deployment data on Github repo.
+A script to clear environment (deployment) data on a Github repo.
 
 Note: it'll remove ALL of your deployments on a repository.
 
